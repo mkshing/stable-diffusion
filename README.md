@@ -1,3 +1,32 @@
+## Stable Diffusion + k-diffusion sampler 
+Modified By Makoto Shing (https://github.com/mkshing, https://twitter.com/mk1stats).
+
+You might be interested in [GLID-3-XL + k-diffusion sampler](https://github.com/mkshing/glid-3-xl) too.
+
+- Support `k-diffusion` sampler
+    
+    First of all, install [k-diffusion](https://github.com/crowsonkb/k-diffusion) by Katherine Crowson (https://github.com/crowsonkb, https://twitter.com/RiversHaveWings).
+    ```
+    pip install git+https://github.com/crowsonkb/k-diffusion
+    ```
+
+    For `k_lms` sampler
+    ```
+    python scripts/txt2img.py --prompt "A ukiyoe of a countryside in Japan" --sampler "k_lms"
+    ```
+     Also, support `["ddpm", "ddim", "plms", "k_euler", "k_euler_ancestral", "k_heun", "k_dpm_2", "k_dpm_2_ancestral", "k_lms"]`.
+  ![k_lms](assets/k_lms.png)
+
+
+- k-samplers+`init_image` also works.
+  ```
+  python3 scripts/txt2img.py --init_image https://p4.wallpaperbetter.com/wallpaper/532/552/965/anime-studio-ghibli-artwork-landscape-wallpaper-preview.jpg --skip_timesteps 20 --prompt "4K HD painting of the view from across the fields" --sampler "k_lms"
+  ```
+  
+  ![init_image](assets/init_image.png)
+------------
+
+
 # Stable Diffusion
 *Stable Diffusion was made possible thanks to a collaboration with [Stability AI](https://stability.ai/) and [Runway](https://runwayml.com/) and builds upon our previous work:*
 
