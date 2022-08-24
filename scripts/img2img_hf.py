@@ -205,21 +205,19 @@ if __name__ == '__main__':
     ).to(device)
 
     # let's download an initial image
-    # url = "https://raw.githubusercontent.com/CompVis/stable-diffusion/main/assets/stable-samples/img2img/sketch-mountains-input.jpg"
-    # prompt = "A fantasy landscape, trending on artstation"
-    url = "/storage/ssd08/mshing/packages/image-lab/app/diffusion/sketch-diffusion/data/stroke2.png"
-    prompt = "A 4K HD painting of a view of country town surrounded by mountains"
+    url = "https://raw.githubusercontent.com/CompVis/stable-diffusion/main/assets/stable-samples/img2img/sketch-mountains-input.jpg"
+    prompt = "A fantasy landscape, trending on artstation"
     batch_size = 4
 
     init_image = Image.open(fetch(url)).convert("RGB")
-    init_image = init_image.resize((512, 512))
+    init_image = init_image.resize((768, 512))
     init_image = preprocess(init_image)
 
     with autocast("cuda"):
         images = pipe(
             prompt=[prompt]*batch_size,
             init_image=init_image,
-            strength=0.5,
+            strength=0.75,
             guidance_scale=7.5,
             num_inference_steps=50,
         )["sample"]
