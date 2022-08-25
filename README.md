@@ -14,7 +14,7 @@ You might be interested in [GLID-3-XL + k-diffusion sampler](https://github.com/
     ```
     python scripts/txt2img.py --prompt "A ukiyoe of a countryside in Japan" --sampler "k_lms"
     ```
-     Also, support `["ddpm", "ddim", "plms", "k_euler", "k_euler_ancestral", "k_heun", "k_dpm_2", "k_dpm_2_ancestral", "k_lms"]`.
+     Also, support `[ddim", "plms", "k_lms", "k_euler", "k_euler_ancestral", "k_heun", "k_dpm_2", "k_dpm_2_ancestral"]`.
   ![k_lms](assets/k_lms.png)
 
 
